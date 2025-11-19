@@ -1,5 +1,11 @@
 ![Metrics](/github-metrics.svg)
 
+![Full-year calendar](/metrics.plugin.isocalendar.fullyear.svg)
+
+![Mildly interesting facts](/metrics.plugin.habits.facts.svg)
+
+![Recent activity charts](/metrics.plugin.habits.charts.svg)
+
 
 <!--
 **JonasHeinickeBio/JonasHeinickeBio** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
