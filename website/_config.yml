@@ -1,0 +1,40 @@
+# Jekyll Configuration for Personal Website
+
+# Site settings
+title: Jonas Heinicke's Personal Website
+description: A personal website showcasing my work and interests
+author: Jonas Heinicke
+email: your-email@example.com
+
+# Build settings
+markdown: kramdown
+theme: minima
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Permalink structure
+permalink: /:title/
+
+# Social links (optional)
+github_username: JonasHeinickeBio
+
+# Enable relative links
+relative_links:
+  enabled: true
+  collections: false
