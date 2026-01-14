@@ -5,38 +5,57 @@ title: Blog
 
 # Blog
 
-Welcome to my blog! Here I share thoughts, tutorials, and insights about software development and technology.
+Welcome to my blog! Here I share insights about bioinformatics, scientific software development, and computational biology research.
 
 ## 📝 Recent Posts
 
-### Getting Started with GitHub Pages and Jekyll
+### Building PyEuropePMC: A Journey in Scientific Literature Mining
 *Coming Soon*
 
-Learn how to set up your own personal website using GitHub Pages and Jekyll, complete with automated deployments using GitHub Actions.
+The story behind creating a comprehensive Python toolkit for Europe PMC, including design decisions, challenges, and lessons learned in building research software.
 
 ---
 
-### Building Better Developer Workflows
+### Knowledge Graphs for Biomedical Research
 *Coming Soon*
 
-Tips and tricks for optimizing your development environment and workflow for maximum productivity.
+Exploring how semantic web technologies and RDF can enhance scientific literature analysis and data integration in biomedicine.
 
 ---
 
-### The Journey of Continuous Learning
+### Best Practices for Scientific Software Development
 *Coming Soon*
 
-Reflections on the importance of continuous learning in the ever-evolving tech landscape.
+Insights on testing, documentation, CI/CD, and maintainability in research software projects, drawn from experience with PyEuropePMC and other tools.
 
 ---
 
-## 🔔 Stay Updated
+### Working with Biomedical Ontologies
+*Coming Soon*
 
-Check back regularly for new posts! I'll be sharing insights on:
-- Software development best practices
-- Technology trends and tools
-- Learning resources and tutorials
-- Project updates and experiences
+A practical guide to ontology mapping, enrichment, and integration using BioPortal, OLS, and other resources in bioinformatics workflows.
+
+---
+
+### PhD Research Update: Literature Mining and Analysis
+*Coming Soon*
+
+Updates on my doctoral research in automated scientific literature analysis and knowledge extraction from biomedical publications.
+
+---
+
+## 🔔 Topics
+
+I write about:
+- **Bioinformatics**: Text mining, ontologies, knowledge graphs
+- **Scientific Computing**: Python development, data processing, APIs
+- **Research Methods**: Reproducible research, documentation, testing
+- **PhD Journey**: Research updates, challenges, and insights
+- **Open Source**: Contributing to scientific software communities
+
+## 🎯 Stay Updated
+
+Check back regularly for new posts! I aim to share practical insights and experiences from my work in bioinformatics and scientific software development.
 
 ---
 

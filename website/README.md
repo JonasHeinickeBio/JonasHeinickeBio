@@ -5,7 +5,10 @@ This folder contains the source files for my personal website, which is built wi
 ## Structure
 
 - `index.md` - Home page
-- `about.md` - About page
+- `about.md` - About page with PhD goals and contact info
+- `projects.md` - Projects showcase with detailed descriptions
+- `cv.md` - Curriculum Vitae
+- `blog.md` - Blog page
 - `_config.yml` - Jekyll configuration
 
 ## Adding Content

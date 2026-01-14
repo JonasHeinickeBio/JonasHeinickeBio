@@ -3,8 +3,9 @@
 # Site settings
 title: Jonas Heinicke
 description: >-
-  Personal website of Jonas Heinicke - Software Developer,
-  Technology Enthusiast, and Continuous Learner
+  Personal website of Jonas Heinicke - Bioinformatics Researcher,
+  PhD Candidate, and Python Developer specializing in scientific
+  literature mining and knowledge graphs
 author: Jonas Heinicke
 email: your-email@example.com
 baseurl: ""
@@ -19,6 +20,7 @@ minima:
   skin: auto
   social_links:
     github: JonasHeinickeBio
+    linkedin: jonas-heinicke-0a6649109
 
 # Exclude from processing
 exclude:
@@ -47,6 +49,7 @@ header_pages:
   - index.md
   - about.md
   - projects.md
+  - cv.md
   - blog.md
 
 # SEO settings
