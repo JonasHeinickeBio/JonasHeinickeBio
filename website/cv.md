@@ -48,7 +48,7 @@ Modular tool for biomedical ontology mapping and enrichment
 [GitHub](https://github.com/JonasHeinickeBio/ontology-mapper)
 
 ### Italian Language Learning App - Developer
-**2025**
+**2025 - 2026**
 
 Python application using local LLM (Ollama) for language learning
 - Custom prompt templates for grammar and vocabulary
