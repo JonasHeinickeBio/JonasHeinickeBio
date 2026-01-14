@@ -5,16 +5,22 @@ title: Home
 
 # Welcome to My Personal Website
 
-This is the home page of my personal website. I'm excited to share my work, thoughts, and projects with you.
+Hello! I'm Jonas Heinicke. Welcome to my personal corner of the internet where I share my work, thoughts, and projects.
 
-## About Me
+## 🚀 Quick Links
 
-I'm a passionate developer and creator. Visit the [About](/about) page to learn more about me.
+- [About Me](/about) - Learn more about my background and interests
+- [Projects](/projects) - Check out my latest projects and work
+- [Blog](/blog) - Read my thoughts on technology and development
 
-## Recent Updates
+## 📌 Recent Highlights
 
-Stay tuned for updates and new content!
+I'm passionate about software development, open source, and continuous learning. This website serves as a portfolio and blog where I document my journey in tech.
+
+## 🤝 Let's Connect
+
+Feel free to explore the site and reach out if you'd like to collaborate or chat about technology!
 
 ---
 
-*Built with Jekyll and deployed via GitHub Pages*
+*Built with Jekyll and automatically deployed via GitHub Actions*

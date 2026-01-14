@@ -1,14 +1,24 @@
 # Jekyll Configuration for Personal Website
 
 # Site settings
-title: Jonas Heinicke's Personal Website
-description: A personal website showcasing my work and interests
+title: Jonas Heinicke
+description: >-
+  Personal website of Jonas Heinicke - Software Developer,
+  Technology Enthusiast, and Continuous Learner
 author: Jonas Heinicke
 email: your-email@example.com
+baseurl: ""
+url: ""
 
 # Build settings
 markdown: kramdown
 theme: minima
+
+# Minima theme settings
+minima:
+  skin: auto
+  social_links:
+    github: JonasHeinickeBio
 
 # Exclude from processing
 exclude:
@@ -22,6 +32,7 @@ exclude:
   - .sass-cache/
   - .jekyll-cache/
   - gemfiles/
+  - README.md
 
 # Plugins
 plugins:
@@ -31,8 +42,20 @@ plugins:
 # Permalink structure
 permalink: /:title/
 
-# Social links (optional)
-github_username: JonasHeinickeBio
+# Navigation (for some themes)
+header_pages:
+  - index.md
+  - about.md
+  - projects.md
+  - blog.md
+
+# SEO settings
+twitter:
+  username: ""
+  card: summary
+
+# Google Analytics (optional - add your tracking ID)
+# google_analytics: UA-XXXXXXXXX-X
 
 # Enable relative links
 relative_links:
