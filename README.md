@@ -1,3 +1,22 @@
+# Hi there! 👋
+
+Welcome to my GitHub profile!
+
+## 🌐 Personal Website
+
+Check out my personal website in the [`website/`](website/) folder, built with Jekyll and deployed via GitHub Pages.
+
+The website includes:
+- About me and my journey
+- Projects and portfolio
+- Blog posts and updates
+
+Visit the [website README](website/README.md) for more information on how to contribute or run it locally.
+
+---
+
+## 📊 GitHub Metrics
+
 ![Metrics](/github-metrics.svg)
 
 ![Full-year calendar](/metrics.plugin.isocalendar.fullyear.svg)

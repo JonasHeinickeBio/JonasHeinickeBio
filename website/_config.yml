@@ -1,0 +1,66 @@
+# Jekyll Configuration for Personal Website
+
+# Site settings
+title: Jonas Heinicke
+description: >-
+  Personal website of Jonas Heinicke - Bioinformatics Researcher,
+  PhD Candidate, and Python Developer specializing in scientific
+  literature mining and knowledge graphs
+author: Jonas Heinicke
+email: your-email@example.com
+baseurl: ""
+url: ""
+
+# Build settings
+markdown: kramdown
+theme: minima
+
+# Minima theme settings
+minima:
+  skin: auto
+  social_links:
+    github: JonasHeinickeBio
+    linkedin: jonas-heinicke-0a6649109
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - README.md
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Permalink structure
+permalink: /:title/
+
+# Navigation (for some themes)
+header_pages:
+  - index.md
+  - about.md
+  - projects.md
+  - cv.md
+  - blog.md
+
+# SEO settings
+twitter:
+  username: ""
+  card: summary
+
+# Google Analytics (optional - add your tracking ID)
+# google_analytics: UA-XXXXXXXXX-X
+
+# Enable relative links
+relative_links:
+  enabled: true
+  collections: false
