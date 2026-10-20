@@ -3,17 +3,15 @@ title: Ontology Mapper
 description: A modular CLI and GUI tool for mapping and enriching ontologies using the BioPortal and OLS APIs.
 tags: [Python, RDF, BioPortal, OLS]
 repo: https://github.com/JonasHeinickeBio/ontology-mapper
+category: research
 featured: true
-order: 2
+order: 3
 ---
-Supports 24+ biomedical ontologies including MONDO, HP, NCIT, DOID and ChEBI.
+Supports 24+ biomedical ontologies including MONDO, HP, NCIT, DOID, ChEBI, GO and SNOMED CT.
 
 ## Features
 
-- Multi-ontology support (MONDO, HP, NCIT, DOID, ChEBI, GO, SNOMED CT and more)
-- Dual API integration with intelligent fallback
-- Turtle, JSON-LD, RDF/XML and SSSOM input and output
-- Interactive CLI and GUI
-- Caching and batch processing
-
-Typical use cases: disease research, symptom analysis, chemical and drug research, ontology enrichment.
+- BioPortal and OLS integration with intelligent fallback
+- Reads Turtle, JSON-LD, RDF/XML, N-Triples and more, and exports to those plus CSV, TSV and SSSOM
+- Interactive CLI and a GUI for non-technical users
+- Caching, batch processing and result comparison

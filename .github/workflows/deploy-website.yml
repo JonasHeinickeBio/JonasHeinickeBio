@@ -6,6 +6,9 @@ on:
     paths: ['website/**', '.github/workflows/deploy-website.yml']
   pull_request:
     paths: ['website/**', '.github/workflows/deploy-website.yml']
+  schedule:
+    # Weekly rebuild keeps GitHub stars and PyPI versions fresh
+    - cron: '17 4 * * 1'
   workflow_dispatch:
 
 permissions:
@@ -32,6 +35,8 @@ jobs:
 
       - run: npm ci
       - run: npm run build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/upload-pages-artifact@v3
         if: github.event_name != 'pull_request'

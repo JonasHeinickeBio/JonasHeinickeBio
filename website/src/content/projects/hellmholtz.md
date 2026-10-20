@@ -1,9 +1,19 @@
 ---
 title: HeLLMholtz
-description: LLM interaction for Helmholtz, including BlaBlador.
-tags: [Python, LLMs]
+description: A Python package for unified LLM access, benchmarking and evaluation, with support for Helmholtz Blablador models.
+tags: [Python, LLMs, Benchmarking, LiteLLM]
 repo: https://github.com/JonasHeinickeBio/HeLLMholtz
+pypi: https://pypi.org/project/hellmholtz/
+category: ai
 featured: true
-order: 3
+order: 4
 ---
-Tooling for working with large language models in a Helmholtz research context, including the BlaBlador service.
+Built on `aisuite`, with one client for OpenAI, Google, Anthropic, Ollama and Helmholtz Blablador models.
+
+## Features
+
+- Benchmarking across temperatures, replications and prompt categories
+- LLM-as-a-judge evaluation with statistical analysis, and HTML and Markdown reports
+- Model availability monitoring for Blablador
+- PII anonymisation of documents, with leak validation
+- A built-in LiteLLM proxy for routing and load balancing

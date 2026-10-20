@@ -47,7 +47,7 @@ export const SKILLS = [
   },
   {
     group: 'Data & semantics',
-    items: ['RDF / OWL', 'SPARQL', 'JSON-LD', 'Turtle', 'SSSOM', 'XML parsing'],
+    items: ['RDF / OWL', 'SPARQL', 'JSON-LD', 'Turtle', 'SSSOM', 'XML parsing', 'Neo4j'],
   },
   {
     group: 'APIs',
@@ -55,9 +55,12 @@ export const SKILLS = [
   },
   {
     group: 'Engineering',
-    items: ['pytest', 'GitHub Actions CI/CD', 'Sphinx / MkDocs', 'Git'],
+    items: ['pytest', 'GitHub Actions CI/CD', 'Sphinx / MkDocs', 'Docker', 'Git'],
   },
-  { group: 'LLMs', items: ['Ollama', 'LangGraph', 'Prompt design'] },
+  {
+    group: 'LLMs & agents',
+    items: ['MCP servers', 'LangGraph', 'LiteLLM', 'Ollama', 'LLM benchmarking'],
+  },
 ];
 
 export const CV = {
@@ -84,24 +87,34 @@ export const CV = {
       title: 'PyEuropePMC — lead developer',
       period: '2025 – present',
       points: [
-        'Published on PyPI, with a documentation site on GitHub Pages',
-        '200+ tests with 90%+ coverage',
-        'Search, XML parsing, knowledge-graph export and API enrichment',
+        'Published on PyPI with a documentation site',
+        'Search, full-text retrieval, XML parsing and RDF export for Europe PMC',
+        'MCP server with 42 tools for AI agents',
+      ],
+    },
+    {
+      title: 'Biomedical Knowledge Lookup — lead developer',
+      period: '2025 – present',
+      points: [
+        'One API, CLI and MCP server over 106 biomedical sources',
+        'Merged, deduplicated and cross-referenced results for knowledge graphs',
       ],
     },
     {
       title: 'Ontology Mapper — lead developer',
       period: '2025 – present',
       points: [
-        'CLI and GUI for 24+ biomedical ontologies',
+        'CLI and GUI for 24+ biomedical ontologies via BioPortal and OLS',
         'Turtle, JSON-LD, RDF/XML and SSSOM input and output',
-        'Caching and batch processing',
       ],
     },
     {
-      title: 'Italian Language Learning App — developer',
-      period: '2025 – 2026',
-      points: ['Local-LLM (Ollama) prompt templates for grammar, vocabulary and corrections'],
+      title: 'HeLLMholtz — lead developer',
+      period: '2025 – present',
+      points: [
+        'LLM access, benchmarking and LLM-as-a-judge evaluation, with Helmholtz Blablador support',
+        'Published on PyPI',
+      ],
     },
   ],
 };
