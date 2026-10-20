@@ -1,21 +1,20 @@
 ---
 title: PyEuropePMC
-description: A Python toolkit for automated search, extraction and analysis of scientific literature from Europe PMC.
-tags: [Python, REST APIs, RDF, Knowledge graphs]
+description: A Python toolkit and MCP server for searching, retrieving and analysing scientific literature from Europe PMC.
+tags: [Python, Europe PMC, RDF, MCP, CLI]
 repo: https://github.com/JonasHeinickeBio/pyEuropePMC
 docs: https://jonasheinickebio.github.io/pyEuropePMC/
 pypi: https://pypi.org/project/pyeuropepmc/
+category: research
 featured: true
 order: 1
 ---
-My flagship project for working with biomedical literature data. It is published on PyPI and has a full documentation site.
+My flagship project for working with scientific literature. It is on PyPI, supports Python 3.10 to 3.13, and has its own documentation site.
 
 ## Features
 
-- Advanced search API with a query builder
-- Full-text retrieval (PDF, XML, HTML)
-- XML parsing and conversion to multiple formats
-- Knowledge graph generation with RDF support
-- Enrichment from CrossRef, Semantic Scholar and OpenAlex
-- Analytics and visualisations
-- 200+ tests with 90%+ code coverage
+- Search with a query builder, linter and PubMed translator
+- Open-access full-text download and XML parsing into typed sections
+- RDF and knowledge graph export, plus BibTeX, RIS, CSL-JSON and CSV export
+- Citation and reference graph walking, text-mined entity annotations, ClinicalTrials.gov search
+- An MCP server (`pyeuropepmc-mcp`) with 42 tools, so AI agents can search and read the literature directly

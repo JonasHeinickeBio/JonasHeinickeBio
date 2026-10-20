@@ -11,6 +11,7 @@ const projects = defineCollection({
     repo: z.url(),
     docs: z.url().optional(),
     pypi: z.url().optional(),
+    category: z.enum(['research', 'ai', 'other']).default('other'),
     featured: z.boolean().default(false),
     order: z.number().default(100),
   }),

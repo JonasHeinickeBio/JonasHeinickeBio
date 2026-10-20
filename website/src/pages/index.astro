@@ -57,7 +57,7 @@ const posts = (await getCollection('blog', (p) => !p.data.draft))
       </div>
       <a class="text-sm font-medium text-accent-700 hover:underline dark:text-accent-400" href={url('projects/')}>All projects →</a>
     </div>
-    <div class="mt-8 grid gap-4 md:grid-cols-2">
+    <div class="mt-8 grid gap-4 md:grid-cols-3">
       {projects.map((p, i) => <ProjectCard project={p} large={i === 0} />)}
     </div>
   </section>

@@ -1,8 +1,9 @@
 ---
 title: pyBikeRouter
-description: An OSM-based bike-routing service with a LangGraph orchestration workflow.
-tags: [Python, OpenStreetMap, LangGraph]
+description: An OSM-based bike-routing service where a LangGraph workflow turns a route request into an explainable, exportable cycling route.
+tags: [Python, OpenStreetMap, LangGraph, Docker]
 repo: https://github.com/JonasHeinickeBio/pyBikeRouter
-order: 4
+category: ai
+order: 5
 ---
-A bike-routing service built on OpenStreetMap data, with the routing steps orchestrated as a LangGraph workflow.
+A typed, provider-neutral domain model, a full openrouteservice client and routing adapter, and a LangGraph workflow. The LLM only parses free text, asks clarifying questions and explains the route. Coordinates, geometry and elevation always come from OSM-derived routing engines. A Docker-based download makes it installable without programming.

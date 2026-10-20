@@ -6,11 +6,45 @@ import ProjectCard from '../components/ProjectCard.astro';
 
 const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
 const [flagship, ...rest] = projects;
+const filters = [
+  { id: 'all', label: 'All' },
+  { id: 'research', label: 'Research tools' },
+  { id: 'ai', label: 'AI & LLMs' },
+  { id: 'other', label: 'Other' },
+];
 ---
 <Base title="Projects" description="Open-source computational biology and research software by Jonas Heinicke.">
-  <PageHeader eyebrow="Projects" title="Software for research" lead="Research tools, LLM experiments and a few side projects, mostly open source." />
-  <div class="mt-10 grid gap-4 md:grid-cols-2">
+  <PageHeader eyebrow="Projects" title="Software for research" lead="Research tools, LLM tooling and a few side projects, mostly open source." />
+
+  <div class="no-print mt-8 flex flex-wrap gap-2" role="group" aria-label="Filter projects" id="filters" hidden>
+    {filters.map((f) => (
+      <button
+        type="button"
+        data-filter={f.id}
+        aria-pressed={f.id === 'all'}
+        class="rounded-full border border-slate-300 px-4 py-1.5 text-sm transition hover:border-accent-500 aria-pressed:border-accent-600 aria-pressed:bg-accent-700 aria-pressed:text-white dark:border-slate-700 dark:aria-pressed:bg-accent-500 dark:aria-pressed:text-slate-950"
+      >
+        {f.label}
+      </button>
+    ))}
+  </div>
+
+  <div id="project-grid" class="mt-8 grid gap-4 md:grid-cols-2">
     <ProjectCard project={flagship} large />
     {rest.map((p) => <ProjectCard project={p} />)}
   </div>
 </Base>
+
+<script>
+  const bar = document.getElementById('filters');
+  const buttons = bar?.querySelectorAll<HTMLButtonElement>('[data-filter]') ?? [];
+  const cards = document.querySelectorAll<HTMLElement>('#project-grid [data-category]');
+  bar?.removeAttribute('hidden');
+  buttons.forEach((btn) =>
+    btn.addEventListener('click', () => {
+      const f = btn.dataset.filter;
+      buttons.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+      cards.forEach((c) => c.toggleAttribute('hidden', f !== 'all' && c.dataset.category !== f));
+    }),
+  );
+</script>
