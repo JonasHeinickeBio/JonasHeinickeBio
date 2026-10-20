@@ -17,7 +17,7 @@ const [meta, version] = await Promise.all([
 
 const link = 'text-accent-700 hover:underline dark:text-accent-400';
 const stats = [
-  meta && meta.stars > 0 ? `★ ${meta.stars}` : null,
+  meta ? `★ ${meta.stars}` : null,
   version ? `PyPI v${version}` : null,
   meta ? `Updated ${formatDate(meta.pushedAt)}` : null,
 ].filter(Boolean);
