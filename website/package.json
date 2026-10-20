@@ -7,7 +7,9 @@
     "node": ">=22.22.0"
   },
   "scripts": {
+    "predev": "node scripts/sync-metrics.mjs",
     "dev": "astro dev",
+    "prebuild": "node scripts/sync-metrics.mjs",
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
