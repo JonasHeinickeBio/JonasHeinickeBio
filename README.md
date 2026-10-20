@@ -1,23 +1,31 @@
-![Metrics](/github-metrics.svg)
+# Hi, I'm Jonas 👋
 
-![Full-year calendar](/metrics.plugin.isocalendar.fullyear.svg)
+PhD researcher at the [Helmholtz Centre for Infection Research (HZI)](https://www.helmholtz-hzi.de/) in Braunschweig, Germany.
+Biochemist by training, developer by habit. I like building data-driven tools that move medical research forward.
 
-![Mildly interesting facts](/metrics.plugin.habits.facts.svg)
+## What I work on
 
-![Recent activity charts](/metrics.plugin.habits.charts.svg)
+- 🧬 **Biomedical data & knowledge graphs**: ontology mapping, literature mining, precision-medicine data
+- 🤖 **LLM tooling for research**: orchestration workflows and local models
+- 🐍 **Python** for almost everything
 
+## Projects
 
-<!--
-**JonasHeinickeBio/JonasHeinickeBio** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+| Project | What it does |
+| --- | --- |
+| [pyEuropePMC](https://github.com/JonasHeinickeBio/pyEuropePMC) | Python wrapper for the Europe PMC API to search and retrieve scientific literature |
+| [ontology-mapper](https://github.com/JonasHeinickeBio/ontology-mapper) | Modular CLI and GUI tool for mapping and enriching ontologies via BioPortal and OLS |
+| [HeLLMholtz](https://github.com/JonasHeinickeBio/HeLLMholtz) | LLM interaction for Helmholtz, including BlaBlador |
+| [pyBikeRouter](https://github.com/JonasHeinickeBio/pyBikeRouter) | OSM-based bike-routing service with a LangGraph orchestration workflow |
 
-Here are some ideas to get you started:
+## Stats
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+<p align="center">
+  <img src="./github-metrics.svg" alt="GitHub metrics overview">
+</p>
+
+<p align="center">
+  <img src="./metrics.plugin.isocalendar.fullyear.svg" alt="Contribution calendar for the last year">
+</p>
+
+<sub>Stats are generated daily by [lowlighter/metrics](https://github.com/lowlighter/metrics) via GitHub Actions.</sub>
