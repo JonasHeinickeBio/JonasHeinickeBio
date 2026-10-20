@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { SITE } from '../consts';
+import { LINKS, SITE } from '../consts';
 import { url } from '../utils';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -12,6 +12,16 @@ interface Props {
 const { title, description = SITE.description } = Astro.props;
 const fullTitle = title ? `${title} · ${SITE.title}` : `${SITE.title} · ${SITE.role}`;
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: SITE.title,
+  jobTitle: 'PhD Researcher',
+  url: new URL(url(), Astro.site).href,
+  worksFor: { '@type': 'Organization', name: SITE.affiliation },
+  address: { '@type': 'PostalAddress', addressLocality: 'Braunschweig', addressCountry: 'DE' },
+  sameAs: [LINKS.github, LINKS.linkedin, LINKS.orcid],
+};
 ---
 <!doctype html>
 <html lang="en">
@@ -30,6 +40,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary" />
     <meta name="theme-color" content="#0f766e" />
+    <script type="application/ld+json" set:html={JSON.stringify(person)} />
     <script is:inline>
       try {
         const t = localStorage.getItem('theme');

@@ -11,11 +11,13 @@ export const LINKS = {
   github: 'https://github.com/JonasHeinickeBio',
   linkedin: 'https://www.linkedin.com/in/jonas-heinicke-0a6649109/',
   pypi: 'https://pypi.org/project/pyeuropepmc/',
+  orcid: 'https://orcid.org/0000-0002-8442-3187',
 };
 
 export const NAV = [
   { label: 'About', href: 'about/' },
   { label: 'Projects', href: 'projects/' },
+  { label: 'Publications', href: 'publications/' },
   { label: 'CV', href: 'cv/' },
   { label: 'Blog', href: 'blog/' },
 ];
@@ -68,7 +70,7 @@ export const CV = {
     {
       title: 'PhD in Computational Biology',
       org: SITE.affiliation,
-      period: 'In progress',
+      period: 'Since 2024',
       points: [
         'Computational analysis of ME/CFS patient data',
         'Scientific literature mining and knowledge graph construction',
@@ -76,10 +78,10 @@ export const CV = {
       ],
     },
     {
-      title: 'Biochemistry',
-      org: 'Graduate',
+      title: 'M.Sc.',
+      org: 'Albert-Ludwigs-Universität Freiburg',
       period: '',
-      points: ['Foundation in biochemistry with a strong pull towards coding and data analysis'],
+      points: ['Biochemistry background with a strong pull towards coding and data analysis'],
     },
   ],
   experience: [
