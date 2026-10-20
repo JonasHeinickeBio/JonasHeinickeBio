@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import ProfileCard from '../components/ProfileCard.astro';
+import MetricsPanel from '../components/MetricsPanel.astro';
 import { LINKS, RESEARCH, SITE } from '../consts';
 import { formatDate, url } from '../utils';
 
@@ -62,11 +63,17 @@ const posts = (await getCollection('blog', (p) => !p.data.draft))
     </div>
   </section>
 
+  <section class="section" aria-labelledby="activity">
+    <p class="eyebrow">03 · Activity</p>
+    <h2 id="activity" class="section-title mt-2">On GitHub</h2>
+    <div class="mt-8"><MetricsPanel /></div>
+  </section>
+
   {posts.length > 0 && (
     <section class="section" aria-labelledby="latest">
       <div class="flex items-end justify-between gap-4">
         <div>
-          <p class="eyebrow">03 · Writing</p>
+          <p class="eyebrow">04 · Writing</p>
           <h2 id="latest" class="section-title mt-2">Latest posts</h2>
         </div>
         <a class="text-sm font-medium text-accent-700 hover:underline dark:text-accent-400" href={url('blog/')}>All posts →</a>

@@ -6,4 +6,4 @@ repo: https://github.com/JonasHeinickeBio/JonasHeinickeBio
 category: other
 order: 9
 ---
-Static, fast and accessible: dark mode, content collections for projects and blog posts, sitemap and RSS. Project stars and PyPI versions are fetched at build time, and the site rebuilds weekly to keep them fresh.
+Static, fast and accessible: dark mode, content collections for projects and blog posts, sitemap and RSS. Project stars and PyPI versions are fetched at build time, and the site rebuilds after each daily metrics refresh to keep them fresh.
