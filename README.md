@@ -4,7 +4,7 @@ Welcome to my GitHub profile!
 
 ## 🌐 Personal Website
 
-Check out my personal website in the [`website/`](website/) folder, built with Jekyll and deployed via GitHub Pages.
+Check out my personal website in the [`website/`](website/) folder, built with Astro and Tailwind CSS and deployed via GitHub Pages: <https://jonasheinickebio.github.io/JonasHeinickeBio/>.
 
 The website includes:
 - About me and my journey

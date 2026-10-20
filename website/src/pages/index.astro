@@ -1,0 +1,89 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import ProfileCard from '../components/ProfileCard.astro';
+import { LINKS, RESEARCH, SITE } from '../consts';
+import { formatDate, url } from '../utils';
+
+const projects = (await getCollection('projects'))
+  .filter((p) => p.data.featured)
+  .sort((a, b) => a.data.order - b.data.order);
+const posts = (await getCollection('blog', (p) => !p.data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+---
+<Base>
+  <section class="relative isolate grid items-center gap-12 lg:grid-cols-[1.4fr_1fr]">
+    <div class="pointer-events-none absolute -top-32 left-0 -z-10 h-80 w-[44rem] max-w-full rounded-full bg-accent-400/20 blur-3xl dark:bg-accent-500/15" aria-hidden="true"></div>
+    <div>
+      <p class="eyebrow">{SITE.role}</p>
+      <h1 class="mt-4 text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl dark:text-white">
+        I build <span class="gradient-text">tools for biomedical research</span>.
+      </h1>
+      <p class="mt-6 max-w-xl text-lg leading-relaxed">
+        I'm Jonas, a PhD researcher at the {SITE.affiliation}. I work on scientific literature
+        mining, knowledge graphs and ontologies, and write open-source Python software that
+        makes research more accessible and reproducible.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href={url('projects/')}>See my projects</a>
+        <a class="btn btn-ghost" href={url('cv/')}>View CV</a>
+        <a class="btn btn-ghost" href={LINKS.github}>GitHub ↗</a>
+      </div>
+    </div>
+    <ProfileCard />
+  </section>
+
+  <section class="section" aria-labelledby="research">
+    <p class="eyebrow">01 · Research</p>
+    <h2 id="research" class="section-title mt-2">What I work on</h2>
+    <div class="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      {RESEARCH.map((r, i) => (
+        <div class="card card-hover">
+          <span class="font-mono text-sm text-accent-600 dark:text-accent-400">{String(i + 1).padStart(2, '0')}</span>
+          <h3 class="mt-3 font-semibold text-slate-900 dark:text-white">{r.title}</h3>
+          <p class="mt-2 text-sm leading-relaxed">{r.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="featured">
+    <div class="flex items-end justify-between gap-4">
+      <div>
+        <p class="eyebrow">02 · Projects</p>
+        <h2 id="featured" class="section-title mt-2">Featured work</h2>
+      </div>
+      <a class="text-sm font-medium text-accent-700 hover:underline dark:text-accent-400" href={url('projects/')}>All projects →</a>
+    </div>
+    <div class="mt-8 grid gap-4 md:grid-cols-2">
+      {projects.map((p, i) => <ProjectCard project={p} large={i === 0} />)}
+    </div>
+  </section>
+
+  {posts.length > 0 && (
+    <section class="section" aria-labelledby="latest">
+      <div class="flex items-end justify-between gap-4">
+        <div>
+          <p class="eyebrow">03 · Writing</p>
+          <h2 id="latest" class="section-title mt-2">Latest posts</h2>
+        </div>
+        <a class="text-sm font-medium text-accent-700 hover:underline dark:text-accent-400" href={url('blog/')}>All posts →</a>
+      </div>
+      <ul class="mt-6 divide-y divide-slate-200 border-y border-slate-200 dark:divide-slate-800 dark:border-slate-800">
+        {posts.map((p) => (
+          <li>
+            <a class="group flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6" href={url(`blog/${p.id}/`)}>
+              <span>
+                <span class="font-medium text-slate-900 group-hover:text-accent-700 dark:text-white dark:group-hover:text-accent-400">{p.data.title}</span>
+                <span class="mt-1 block text-sm">{p.data.description}</span>
+              </span>
+              <time class="shrink-0 font-mono text-xs text-slate-500" datetime={p.data.date.toISOString()}>{formatDate(p.data.date)}</time>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+</Base>

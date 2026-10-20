@@ -1,56 +1,32 @@
-# Personal Website
+# Personal website
 
-This folder contains the source files for my personal website, which is built with Jekyll and deployed to GitHub Pages.
+[Astro](https://astro.build) + [Tailwind CSS v4](https://tailwindcss.com) + TypeScript, deployed to GitHub Pages by `.github/workflows/deploy-website.yml`.
 
-## Structure
+Live at <https://jonasheinickebio.github.io/JonasHeinickeBio/>.
 
-- `index.md` - Home page
-- `about.md` - About page with PhD goals and contact info
-- `projects.md` - Projects showcase with detailed descriptions
-- `cv.md` - Curriculum Vitae
-- `blog.md` - Blog page
-- `_config.yml` - Jekyll configuration
+## Develop
 
-## Adding Content
+Requires Node 22.22 or newer.
 
-To add new pages:
-1. Create a new `.md` file in this directory
-2. Add front matter at the top:
-   ```yaml
-   ---
-   layout: default
-   title: Your Page Title
-   ---
-   ```
-3. Write your content in Markdown below the front matter
-4. Commit and push - the site will automatically rebuild
-
-## Local Development
-
-To test locally:
 ```bash
 cd website
-gem install bundler jekyll
-bundle init
-bundle add jekyll minima
-bundle exec jekyll serve
+npm install
+npm run dev      # http://localhost:4321/JonasHeinickeBio/
+npm run build    # type-check + static build into dist/
 ```
 
-Then visit `http://localhost:4000` in your browser.
+## Edit content
+
+| What | Where |
+| --- | --- |
+| Projects | `src/content/projects/*.md` (frontmatter: title, description, tags, repo, docs, pypi, featured, order) |
+| Blog posts | `src/content/blog/*.md` (set `draft: true` to hide) |
+| Bio, links, skills, CV entries | `src/consts.ts` |
+| Pages | `src/pages/` |
+| Colours and shared styles | `src/styles/global.css` |
 
 ## Deployment
 
-The website is automatically deployed to GitHub Pages when changes are pushed to the main/master branch in the `website/` directory. The deployment is handled by the GitHub Actions workflow at `.github/workflows/deploy-website.yml`.
+In the repository settings, set **Pages → Source** to **GitHub Actions**. Pushes to `main` that touch `website/` deploy automatically. Pull requests only run the build.
 
-## Theme
-
-This site uses the default [Minima](https://github.com/jekyll/minima) theme. You can customize it by:
-- Editing `_config.yml` for site-wide settings
-- Creating custom layouts in `_layouts/`
-- Adding custom CSS in `assets/css/`
-
-## Learn More
-
-- [Jekyll Documentation](https://jekyllrb.com/docs/)
-- [GitHub Pages Documentation](https://docs.github.com/en/pages)
-- [Markdown Guide](https://www.markdownguide.org/)
+The site is served from the `/JonasHeinickeBio` base path (see `astro.config.mjs`). Remove `base` if the site moves to a `jonasheinickebio.github.io` user-site repository.

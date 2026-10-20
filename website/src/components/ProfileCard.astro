@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import { LINKS, SITE } from '../consts';
+
+const projectCount = (await getCollection('projects')).length;
+
+const facts = [
+  { value: String(projectCount), label: 'Projects' },
+  { value: '24+', label: 'Ontologies' },
+  { value: '200+', label: 'Tests in PyEuropePMC' },
+];
+---
+<aside class="card relative overflow-hidden p-6 sm:p-7">
+  <div class="flex items-center gap-4">
+    <div class="relative size-16 shrink-0 overflow-hidden rounded-2xl bg-accent-700 ring-2 ring-accent-500/40">
+      <span class="absolute inset-0 grid place-items-center text-xl font-bold text-white" aria-hidden="true">JH</span>
+      <img
+        src="https://github.com/JonasHeinickeBio.png?size=128"
+        alt=""
+        width="64"
+        height="64"
+        loading="eager"
+        class="relative size-full object-cover"
+        onerror="this.remove()"
+      />
+    </div>
+    <div>
+      <p class="font-semibold text-slate-900 dark:text-white">{SITE.title}</p>
+      <p class="text-sm">{SITE.role}</p>
+    </div>
+  </div>
+
+  <dl class="mt-6 space-y-3 text-sm">
+    <div class="flex gap-3"><dt class="w-20 shrink-0 font-mono text-xs uppercase tracking-wide text-slate-500">At</dt><dd>{SITE.affiliation}</dd></div>
+    <div class="flex gap-3"><dt class="w-20 shrink-0 font-mono text-xs uppercase tracking-wide text-slate-500">Based</dt><dd>{SITE.location}</dd></div>
+    <div class="flex gap-3"><dt class="w-20 shrink-0 font-mono text-xs uppercase tracking-wide text-slate-500">Focus</dt><dd>Literature mining, knowledge graphs, ontologies</dd></div>
+  </dl>
+
+  <div class="mt-6 grid grid-cols-3 gap-2 border-t border-slate-200 pt-5 dark:border-slate-800">
+    {facts.map((f) => (
+      <div>
+        <p class="text-2xl font-bold text-accent-700 dark:text-accent-400">{f.value}</p>
+        <p class="text-xs leading-tight text-slate-500">{f.label}</p>
+      </div>
+    ))}
+  </div>
+
+  <p class="mt-6 flex gap-4 text-sm font-medium">
+    <a class="text-accent-700 hover:underline dark:text-accent-400" href={LINKS.github} rel="me">GitHub ↗</a>
+    <a class="text-accent-700 hover:underline dark:text-accent-400" href={LINKS.linkedin} rel="me">LinkedIn ↗</a>
+  </p>
+</aside>
