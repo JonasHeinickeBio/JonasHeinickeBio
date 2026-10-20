@@ -8,8 +8,8 @@ const posts = (await getCollection('blog', (p) => !p.data.draft)).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 ---
-<Base title="Blog" description="Writing on bioinformatics, scientific software and research.">
-  <PageHeader eyebrow="Blog" title="Notes & updates" lead="Writing on bioinformatics, scientific software and the PhD journey." />
+<Base title="Blog" description="Writing on computational biology, scientific software and research.">
+  <PageHeader eyebrow="Blog" title="Notes & updates" lead="Writing on computational biology, scientific software and the PhD journey." />
   <div class="mt-10 max-w-3xl">
   <ul class="mt-10 space-y-4">
     {posts.map((p) => (

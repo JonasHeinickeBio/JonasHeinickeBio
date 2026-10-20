@@ -7,7 +7,7 @@ import ProjectCard from '../components/ProjectCard.astro';
 const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
 const [flagship, ...rest] = projects;
 ---
-<Base title="Projects" description="Open-source bioinformatics and research software by Jonas Heinicke.">
+<Base title="Projects" description="Open-source computational biology and research software by Jonas Heinicke.">
   <PageHeader eyebrow="Projects" title="Software for research" lead="Research tools, LLM experiments and a few side projects, mostly open source." />
   <div class="mt-10 grid gap-4 md:grid-cols-2">
     <ProjectCard project={flagship} large />

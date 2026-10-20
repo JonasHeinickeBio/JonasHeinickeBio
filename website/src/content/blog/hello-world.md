@@ -9,6 +9,7 @@ This site is the home for my research notes, software projects and CV. It is a s
 ## What to expect
 
 - Notes on building PyEuropePMC and other research software
+- Working with ME/CFS patient data and the scientific literature
 - Knowledge graphs and ontologies for biomedical data
 - Scientific software practices: testing, documentation, CI/CD
-- Updates from my PhD work on literature mining
+- Updates from my PhD work in computational biology

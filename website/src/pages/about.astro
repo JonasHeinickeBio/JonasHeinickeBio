@@ -5,14 +5,15 @@ import ProfileCard from '../components/ProfileCard.astro';
 import { LINKS, SITE, SKILLS } from '../consts';
 ---
 <Base title="About" description="Background, research goals and skills of Jonas Heinicke.">
-  <PageHeader eyebrow="About" title="Biochemist turned bioinformatician" lead="Data-driven solutions to advance medical research." />
+  <PageHeader eyebrow="About" title="Biochemist turned computational biologist" lead="Data-driven solutions to advance medical research." />
 
   <div class="mt-12 grid gap-12 lg:grid-cols-[1fr_20rem]">
     <div class="min-w-0">
       <div class="prose-md text-lg">
         <p>
           I'm a PhD researcher at the {SITE.affiliation} in {SITE.location}. I trained as a
-          biochemist and kept getting pulled towards code.
+          biochemist and kept getting pulled towards code. My research focuses on ME/CFS patient
+          data and the scientific literature around it.
         </p>
         <p>
           My work combines software development with biological and medical data. I'm driven by
@@ -24,11 +25,11 @@ import { LINKS, SITE, SKILLS } from '../consts';
         <h2 id="goals" class="section-title">PhD goals</h2>
         <ol class="mt-6 space-y-3">
           {[
-            ['Literature mining', 'Tools for automated extraction and analysis of biomedical literature'],
+            ['Patient data', 'Computational analysis of ME/CFS patient data'],
+            ['Literature mining', 'Tools for automated extraction and analysis of scientific literature'],
             ['Knowledge graphs', 'Graphs built from publications to enable data integration and discovery'],
             ['Ontology integration', 'Robust systems for mapping and enriching biomedical ontologies'],
             ['Reproducible research', 'Open science through documented, tested, maintainable software'],
-            ['Data integration', 'Connecting multiple biomedical data sources for broader insight'],
           ].map(([t, d], i) => (
             <li class="card flex gap-4 p-4">
               <span class="font-mono text-sm text-accent-600 dark:text-accent-400">{String(i + 1).padStart(2, '0')}</span>

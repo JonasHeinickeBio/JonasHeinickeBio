@@ -1,8 +1,8 @@
 export const SITE = {
   title: 'Jonas Heinicke',
   description:
-    'PhD researcher in bioinformatics at HZI Braunschweig. Scientific literature mining, knowledge graphs, ontologies and open-source research software.',
-  role: 'PhD Researcher · Bioinformatics',
+    'PhD researcher in computational biology at HZI Braunschweig. ME/CFS patient data, scientific literature mining, knowledge graphs and open-source research software.',
+  role: 'PhD Researcher · Computational Biology',
   affiliation: 'Helmholtz Centre for Infection Research (HZI)',
   location: 'Braunschweig, Germany',
 };
@@ -22,16 +22,16 @@ export const NAV = [
 
 export const RESEARCH = [
   {
+    title: 'ME/CFS patient data',
+    text: 'Computational analysis of patient data to better understand ME/CFS.',
+  },
+  {
     title: 'Literature mining',
-    text: 'Automated search, retrieval and extraction from biomedical literature via Europe PMC.',
+    text: 'Automated search, retrieval and extraction from the scientific literature via Europe PMC.',
   },
   {
-    title: 'Knowledge graphs',
-    text: 'Turning publications into semantic, queryable representations of biomedical knowledge.',
-  },
-  {
-    title: 'Ontology integration',
-    text: 'Mapping and enriching terms across 24+ ontologies such as MONDO, HP, NCIT and ChEBI.',
+    title: 'Knowledge graphs & ontologies',
+    text: 'Turning publications into queryable knowledge, and mapping terms across ontologies such as MONDO, HP and NCIT.',
   },
   {
     title: 'Reproducible software',
@@ -42,8 +42,8 @@ export const RESEARCH = [
 export const SKILLS = [
   { group: 'Languages', items: ['Python (primary)', 'HTML/CSS', 'JavaScript'] },
   {
-    group: 'Bioinformatics',
-    items: ['Literature mining', 'Ontology mapping', 'Knowledge graphs', 'Data integration'],
+    group: 'Computational biology',
+    items: ['Patient data analysis', 'Literature mining', 'Ontology mapping', 'Knowledge graphs', 'Data integration'],
   },
   {
     group: 'Data & semantics',
@@ -63,13 +63,13 @@ export const SKILLS = [
 export const CV = {
   education: [
     {
-      title: 'PhD in Bioinformatics',
+      title: 'PhD in Computational Biology',
       org: SITE.affiliation,
       period: 'In progress',
       points: [
+        'Computational analysis of ME/CFS patient data',
         'Scientific literature mining and knowledge graph construction',
-        'Ontology mapping and enrichment',
-        'Semantic web technologies for biomedical data',
+        'Ontology mapping and semantic web technologies for biomedical data',
       ],
     },
     {
