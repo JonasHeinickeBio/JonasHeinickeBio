@@ -1,11 +1,14 @@
 # Hi, I'm Jonas 👋
 
-PhD researcher at the [Helmholtz Centre for Infection Research (HZI)](https://www.helmholtz-hzi.de/) in Braunschweig, Germany.
+PhD researcher in computational biology at the [Helmholtz Centre for Infection Research (HZI)](https://www.helmholtz-hzi.de/) in Braunschweig, Germany.
 Biochemist by training, developer by habit. I like building data-driven tools that move medical research forward.
+
+🌐 **Website:** <https://jonasheinickebio.github.io/JonasHeinickeBio/>
 
 ## What I work on
 
-- 🧬 **Biomedical data & knowledge graphs**: ontology mapping, literature mining, precision-medicine data
+- 🧬 **ME/CFS patient data & scientific literature**: computational analysis and literature mining
+- 🕸️ **Knowledge graphs & ontologies**: mapping and enriching biomedical terminology
 - 🤖 **LLM tooling for research**: orchestration workflows and local models
 - 🐍 **Python** for almost everything
 

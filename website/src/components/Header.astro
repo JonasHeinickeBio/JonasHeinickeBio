@@ -1,0 +1,66 @@
+---
+import { NAV, SITE } from '../consts';
+import { url } from '../utils';
+import ThemeToggle from './ThemeToggle.astro';
+
+const path = Astro.url.pathname;
+const isActive = (href: string) => path.startsWith(url(href));
+const linkClass = (href: string) => [
+  'rounded-full px-3 py-1.5 transition hover:text-accent-700 dark:hover:text-accent-400',
+  isActive(href) ? 'font-medium text-accent-700 dark:text-accent-400' : '',
+];
+---
+<header class="sticky top-0 z-40 border-b border-slate-200/70 bg-white/80 backdrop-blur dark:border-slate-800/70 dark:bg-slate-950/80">
+  <div class="container-page flex h-16 items-center justify-between">
+    <a href={url()} class="whitespace-nowrap font-semibold tracking-tight text-slate-900 dark:text-white">
+      {SITE.title}<span class="text-accent-500">.</span>
+    </a>
+
+    <nav aria-label="Main" class="hidden items-center gap-1 text-sm md:flex">
+      {NAV.map((item) => (
+        <a href={url(item.href)} aria-current={isActive(item.href) ? 'page' : undefined} class:list={linkClass(item.href)}>
+          {item.label}
+        </a>
+      ))}
+      <ThemeToggle />
+    </nav>
+
+    <div class="flex items-center gap-1 md:hidden">
+      <ThemeToggle />
+      <button
+        id="menu-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        class="grid size-9 place-items-center rounded-full text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+      >
+        <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-menu" aria-label="Mobile" hidden class="border-t border-slate-200 bg-white px-5 py-3 md:hidden dark:border-slate-800 dark:bg-slate-950">
+    <ul class="space-y-1">
+      {NAV.map((item) => (
+        <li>
+          <a href={url(item.href)} aria-current={isActive(item.href) ? 'page' : undefined} class:list={['block py-2', ...linkClass(item.href)]}>
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const btn = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    menu?.toggleAttribute('hidden', open);
+  });
+</script>

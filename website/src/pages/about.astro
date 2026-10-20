@@ -1,0 +1,69 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import ProfileCard from '../components/ProfileCard.astro';
+import { LINKS, SITE, SKILLS } from '../consts';
+---
+<Base title="About" description="Background, research goals and skills of Jonas Heinicke.">
+  <PageHeader eyebrow="About" title="Biochemist turned computational biologist" lead="Data-driven solutions to advance medical research." />
+
+  <div class="mt-12 grid gap-12 lg:grid-cols-[1fr_20rem]">
+    <div class="min-w-0">
+      <div class="prose-md text-lg">
+        <p>
+          I'm a PhD researcher at the {SITE.affiliation} in {SITE.location}. I trained as a
+          biochemist and kept getting pulled towards code. My research focuses on ME/CFS patient
+          data and the scientific literature around it.
+        </p>
+        <p>
+          My work combines software development with biological and medical data. I'm driven by
+          the challenge of building tools that make scientific research more accessible and reproducible.
+        </p>
+      </div>
+
+      <section class="mt-14" aria-labelledby="goals">
+        <h2 id="goals" class="section-title">PhD goals</h2>
+        <ol class="mt-6 space-y-3">
+          {[
+            ['Patient data', 'Computational analysis of ME/CFS patient data'],
+            ['Literature mining', 'Tools for automated extraction and analysis of scientific literature'],
+            ['Knowledge graphs', 'Graphs built from publications to enable data integration and discovery'],
+            ['Ontology integration', 'Robust systems for mapping and enriching biomedical ontologies'],
+            ['Reproducible research', 'Open science through documented, tested, maintainable software'],
+          ].map(([t, d], i) => (
+            <li class="card flex gap-4 p-4">
+              <span class="font-mono text-sm text-accent-600 dark:text-accent-400">{String(i + 1).padStart(2, '0')}</span>
+              <p><strong class="text-slate-900 dark:text-white">{t}.</strong> {d}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section class="mt-14" aria-labelledby="skills">
+        <h2 id="skills" class="section-title">Skills</h2>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2">
+          {SKILLS.map((s) => (
+            <div class="card">
+              <h3 class="eyebrow">{s.group}</h3>
+              <ul class="mt-3 flex flex-wrap gap-2">
+                {s.items.map((i) => <li class="tag">{i}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mt-14" aria-labelledby="contact">
+        <h2 id="contact" class="section-title">Get in touch</h2>
+        <p class="prose-md mt-4">
+          I'm happy to talk about collaborations, research, open-source contributions or questions about my projects.
+          The best places to reach me are <a href={LINKS.linkedin}>LinkedIn</a> and <a href={LINKS.github}>GitHub</a>.
+        </p>
+      </section>
+    </div>
+
+    <div class="hidden lg:block">
+      <div class="sticky top-24"><ProfileCard /></div>
+    </div>
+  </div>
+</Base>
