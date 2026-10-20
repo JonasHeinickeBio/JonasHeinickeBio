@@ -1,42 +1,31 @@
-# Hi there! 👋
+# Hi, I'm Jonas 👋
 
-Welcome to my GitHub profile!
+PhD researcher at the [Helmholtz Centre for Infection Research (HZI)](https://www.helmholtz-hzi.de/) in Braunschweig, Germany.
+Biochemist by training, developer by habit. I like building data-driven tools that move medical research forward.
 
-## 🌐 Personal Website
+## What I work on
 
-Check out my personal website in the [`website/`](website/) folder, built with Astro and Tailwind CSS and deployed via GitHub Pages: <https://jonasheinickebio.github.io/JonasHeinickeBio/>.
+- 🧬 **Biomedical data & knowledge graphs**: ontology mapping, literature mining, precision-medicine data
+- 🤖 **LLM tooling for research**: orchestration workflows and local models
+- 🐍 **Python** for almost everything
 
-The website includes:
-- About me and my journey
-- Projects and portfolio
-- Blog posts and updates
+## Projects
 
-Visit the [website README](website/README.md) for more information on how to contribute or run it locally.
+| Project | What it does |
+| --- | --- |
+| [pyEuropePMC](https://github.com/JonasHeinickeBio/pyEuropePMC) | Python wrapper for the Europe PMC API to search and retrieve scientific literature |
+| [ontology-mapper](https://github.com/JonasHeinickeBio/ontology-mapper) | Modular CLI and GUI tool for mapping and enriching ontologies via BioPortal and OLS |
+| [HeLLMholtz](https://github.com/JonasHeinickeBio/HeLLMholtz) | LLM interaction for Helmholtz, including BlaBlador |
+| [pyBikeRouter](https://github.com/JonasHeinickeBio/pyBikeRouter) | OSM-based bike-routing service with a LangGraph orchestration workflow |
 
----
+## Stats
 
-## 📊 GitHub Metrics
+<p align="center">
+  <img src="./github-metrics.svg" alt="GitHub metrics overview">
+</p>
 
-![Metrics](/github-metrics.svg)
+<p align="center">
+  <img src="./metrics.plugin.isocalendar.fullyear.svg" alt="Contribution calendar for the last year">
+</p>
 
-![Full-year calendar](/metrics.plugin.isocalendar.fullyear.svg)
-
-![Mildly interesting facts](/metrics.plugin.habits.facts.svg)
-
-![Recent activity charts](/metrics.plugin.habits.charts.svg)
-
-
-<!--
-**JonasHeinickeBio/JonasHeinickeBio** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+<sub>Stats are generated daily by [lowlighter/metrics](https://github.com/lowlighter/metrics) via GitHub Actions.</sub>
