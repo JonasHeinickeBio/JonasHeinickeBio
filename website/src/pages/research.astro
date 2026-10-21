@@ -1,0 +1,150 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { url } from '../utils';
+
+const problems = [
+  {
+    title: 'Fragmented records',
+    text: 'Symptoms, questionnaires, lab results and diagnoses sit in free-text notes and separate files. Clinicians have to piece the picture together under time pressure, and patterns across patients stay hidden.',
+  },
+  {
+    title: 'Several definitions, no biomarker',
+    text: 'ME/CFS has more than one set of diagnostic criteria (Fukuda, Canadian Consensus, IOM, ICC, NICE), each with different requirements. Without a validated biomarker, diagnosis can take years.',
+  },
+  {
+    title: 'Too much literature to read',
+    text: 'Tens of thousands of papers exist on long COVID alone. Finding which findings are solid, and linking them to what clinicians see, needs software.',
+  },
+];
+
+const projects = [
+  {
+    name: 'AID-PAIS',
+    tagline: 'Clinical decision support for post-infectious ME/CFS',
+    text: 'Combines a knowledge graph of what is known about the disease with mechanistic mathematical models and machine learning on clinical-study data. The aims are to understand the pathophysiology, find patient subtypes and diagnostic criteria, and predict how different treatments work for different patients.',
+    partners: 'Helmholtz Centre for Infection Research (HZI) and Charité – Universitätsmedizin Berlin',
+  },
+  {
+    name: 'DETECT-ME/CFS',
+    tagline: 'AI-assisted diagnosis tool for clinical typologies',
+    text: 'Builds a decision-support system from three parts: a fuzzy-logic expert system that models how experienced physicians reach a diagnosis, machine learning on routine visit data to refine it, and a symptom–disease relationship model mined from the literature with NLP. The plan is to validate it retrospectively and then pilot it in clinics.',
+    partners: 'HZI, the Munich Chronic Fatigue Centre for Young People (TUM Klinikum rechts der Isar) and Charité Berlin',
+  },
+];
+
+const approach = [
+  {
+    title: 'A patient-centred knowledge graph',
+    text: 'Routine clinical data is mapped to a graph built around the patient and the visit, linking symptoms, questionnaires, labs, triggers, diagnoses and medication. Standard vocabularies (such as UMLS) and RDF mappings make it machine-readable, and SHACL rules check records against diagnostic criteria so that every flag can be explained.',
+  },
+  {
+    title: 'A knowledge graph from the literature',
+    text: 'Entities and relations are extracted from papers with language models, mapped to ontologies, and always linked back to the paper they came from, so every statement stays traceable. Locally run models are benchmarked for coverage, valid output and speed.',
+  },
+  {
+    title: 'Subtypes and decision support',
+    text: 'Graph embeddings and clustering look for subgroups and patterns that single questionnaire scores miss, and the criteria checks feed a decision-support layer. The goal is a tool that clinicians can verify, not a black box.',
+  },
+];
+
+const tools = [
+  { name: 'PyEuropePMC', text: 'Search and retrieve literature from Europe PMC' },
+  { name: 'Biomedical Knowledge Lookup', text: 'One query across 106 biomedical sources' },
+  { name: 'Ontology Mapper', text: 'Map and enrich terms with BioPortal and OLS' },
+  { name: 'HeLLMholtz', text: 'Benchmark and evaluate LLMs' },
+];
+---
+<Base title="Research" description="Computational research on ME/CFS: knowledge graphs, literature mining and decision support from clinical data.">
+  <PageHeader
+    eyebrow="Research"
+    title="Making ME/CFS data and literature computable"
+    lead="I'm a PhD researcher at the Helmholtz Centre for Infection Research. I turn fragmented clinical records and the scientific literature into structured, explainable knowledge that can support diagnosis and patient stratification in ME/CFS and post-infectious syndromes."
+  />
+
+  <section class="section !mt-14" aria-labelledby="problem">
+    <p class="eyebrow">01 · The problem</p>
+    <h2 id="problem" class="section-title mt-2">Why this is hard</h2>
+    <div class="mt-8 grid gap-4 md:grid-cols-3">
+      {problems.map((p) => (
+        <div class="card">
+          <h3 class="font-semibold text-slate-900 dark:text-white">{p.title}</h3>
+          <p class="mt-2 text-sm leading-relaxed">{p.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="projects">
+    <p class="eyebrow">02 · Projects</p>
+    <h2 id="projects" class="section-title mt-2">Where I work on it</h2>
+    <div class="mt-8 grid gap-4 md:grid-cols-2">
+      {projects.map((p) => (
+        <article class="card flex flex-col">
+          <p class="eyebrow">{p.name}</p>
+          <h3 class="mt-2 text-lg font-semibold text-slate-900 dark:text-white">{p.tagline}</h3>
+          <p class="mt-3 flex-1 text-sm leading-relaxed">{p.text}</p>
+          <p class="mt-4 border-t border-slate-200 pt-4 text-xs text-slate-500 dark:border-slate-800">
+            <span class="font-medium">Partners:</span> {p.partners}
+          </p>
+        </article>
+      ))}
+    </div>
+    <p class="mt-4 max-w-3xl text-sm">
+      My focus in both is the data side: the knowledge graphs, the literature mining and the mapping to ontologies.
+    </p>
+  </section>
+
+  <section class="section" aria-labelledby="approach">
+    <p class="eyebrow">03 · Approach</p>
+    <h2 id="approach" class="section-title mt-2">How I do it</h2>
+    <ol class="mt-8 space-y-4">
+      {approach.map((a, i) => (
+        <li class="card flex gap-5">
+          <span class="font-mono text-sm text-accent-600 dark:text-accent-400">{String(i + 1).padStart(2, '0')}</span>
+          <div>
+            <h3 class="font-semibold text-slate-900 dark:text-white">{a.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed">{a.text}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="section" aria-labelledby="tools">
+    <p class="eyebrow">04 · Tools</p>
+    <h2 id="tools" class="section-title mt-2">Software behind the research</h2>
+    <p class="mt-3 max-w-3xl">The open-source tools I write for this work are available to anyone.</p>
+    <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {tools.map((t) => (
+        <a class="card card-hover block" href={url('projects/')}>
+          <h3 class="font-semibold text-slate-900 dark:text-white">{t.name}</h3>
+          <p class="mt-2 text-sm">{t.text}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="posters">
+    <p class="eyebrow">05 · Posters</p>
+    <h2 id="posters" class="section-title mt-2">Presented work</h2>
+    <p class="mt-4 max-w-3xl">
+      <strong class="text-slate-900 dark:text-white">DETECT ME/CFS: Leveraging Knowledge Graphs and AI in ME/CFS and Long COVID Research for Subtype Discovery and Diagnosis.</strong>
+      Poster with colleagues from HZI, L3S Hannover and the Munich Chronic Fatigue Centre, presented at:
+    </p>
+    <ul class="prose-md mt-4 max-w-3xl">
+      <li>International ME/CFS Conference, Berlin (2026)</li>
+      <li>
+        Science and Technology Tour to the Netherlands (2026), a trip for PhD researchers from Germany and the
+        Netherlands to startups and research institutions in Amsterdam, Eindhoven and Delft
+      </li>
+    </ul>
+  </section>
+
+  <aside class="mt-16 rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm dark:border-slate-800 dark:bg-slate-900/50">
+    <p>
+      <strong class="text-slate-900 dark:text-white">Work in progress.</strong>
+      These are research projects under development, not clinical tools. No patient-level data is published on this site.
+    </p>
+  </aside>
+</Base>
