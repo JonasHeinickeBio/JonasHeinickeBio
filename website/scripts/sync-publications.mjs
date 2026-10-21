@@ -74,7 +74,12 @@ try {
     }
   }
 
-  const committed = new Map(readCommitted().map((p) => [p.doi.toLowerCase(), p]));
+  const prior = readCommitted();
+  const committed = new Map(
+    (Array.isArray(prior) ? prior : [])
+      .filter((p) => typeof p?.doi === 'string')
+      .map((p) => [p.doi.toLowerCase(), p]),
+  );
   const pubs = [];
   for (const doi of dois) {
     const pub = fresh.get(doi) ?? committed.get(doi);
