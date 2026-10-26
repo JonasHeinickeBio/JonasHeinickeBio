@@ -42,7 +42,7 @@ const posts = (await getCollection('blog', (p) => !p.data.draft))
     <div class="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
       {RESEARCH.map((r, i) => (
         <div class="card card-hover">
-          <span class="font-mono text-sm text-accent-600 dark:text-accent-400">{String(i + 1).padStart(2, '0')}</span>
+          <span class="font-mono text-sm text-accent-700 dark:text-accent-400">{String(i + 1).padStart(2, '0')}</span>
           <h3 class="mt-3 font-semibold text-slate-900 dark:text-white">{r.title}</h3>
           <p class="mt-2 text-sm leading-relaxed">{r.text}</p>
         </div>
@@ -86,7 +86,7 @@ const posts = (await getCollection('blog', (p) => !p.data.draft))
                 <span class="font-medium text-slate-900 group-hover:text-accent-700 dark:text-white dark:group-hover:text-accent-400">{p.data.title}</span>
                 <span class="mt-1 block text-sm">{p.data.description}</span>
               </span>
-              <time class="shrink-0 font-mono text-xs text-slate-500" datetime={p.data.date.toISOString()}>{formatDate(p.data.date)}</time>
+              <time class="shrink-0 font-mono text-xs text-slate-500 dark:text-slate-400" datetime={p.data.date.toISOString()}>{formatDate(p.data.date)}</time>
             </a>
           </li>
         ))}

@@ -29,16 +29,16 @@ const facts = [
   </div>
 
   <dl class="mt-6 space-y-3 text-sm">
-    <div class="flex gap-3"><dt class="w-20 shrink-0 font-mono text-xs uppercase tracking-wide text-slate-500">At</dt><dd>{SITE.affiliation}</dd></div>
-    <div class="flex gap-3"><dt class="w-20 shrink-0 font-mono text-xs uppercase tracking-wide text-slate-500">Based</dt><dd>{SITE.location}</dd></div>
-    <div class="flex gap-3"><dt class="w-20 shrink-0 font-mono text-xs uppercase tracking-wide text-slate-500">Focus</dt><dd>ME/CFS patient data, scientific literature</dd></div>
+    <div class="flex gap-3"><dt class="w-20 shrink-0 font-mono text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">At</dt><dd>{SITE.affiliation}</dd></div>
+    <div class="flex gap-3"><dt class="w-20 shrink-0 font-mono text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">Based</dt><dd>{SITE.location}</dd></div>
+    <div class="flex gap-3"><dt class="w-20 shrink-0 font-mono text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">Focus</dt><dd>ME/CFS patient data, scientific literature</dd></div>
   </dl>
 
   <div class="mt-6 grid grid-cols-3 gap-2 border-t border-slate-200 pt-5 dark:border-slate-800">
     {facts.map((f) => (
       <div>
         <p class="text-2xl font-bold text-accent-700 dark:text-accent-400">{f.value}</p>
-        <p class="text-xs leading-tight text-slate-500">{f.label}</p>
+        <p class="text-xs leading-tight text-slate-500 dark:text-slate-400">{f.label}</p>
       </div>
     ))}
   </div>

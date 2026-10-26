@@ -30,8 +30,8 @@ const filters = [
   </div>
 
   <div id="project-grid" class="mt-8 grid gap-4 md:grid-cols-2">
-    <ProjectCard project={flagship} large />
-    {rest.map((p) => <ProjectCard project={p} />)}
+    <ProjectCard project={flagship} large headingLevel={2} />
+    {rest.map((p) => <ProjectCard project={p} headingLevel={2} />)}
   </div>
 </Base>
 
