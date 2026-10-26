@@ -6,8 +6,11 @@ import { formatDate } from '../utils';
 interface Props {
   project: CollectionEntry<'projects'>;
   large?: boolean;
+  /** Heading level; use 2 where the card is not nested under another section heading. */
+  headingLevel?: 2 | 3;
 }
-const { project, large = false } = Astro.props;
+const { project, large = false, headingLevel = 3 } = Astro.props;
+const Heading = `h${headingLevel}` as 'h2' | 'h3';
 const { data } = project;
 
 const [meta, version] = await Promise.all([
@@ -27,12 +30,12 @@ const stats = [
   class:list={['card card-hover flex flex-col', large && 'col-span-full md:p-8']}
 >
   {large && <p class="eyebrow mb-3">Flagship</p>}
-  <h3 class:list={['font-semibold text-slate-900 dark:text-white', large ? 'text-2xl' : 'text-lg']}>{data.title}</h3>
+  <Heading class:list={['font-semibold text-slate-900 dark:text-white', large ? 'text-2xl' : 'text-lg']}>{data.title}</Heading>
   <p class:list={['mt-2 flex-1 leading-relaxed', large ? 'max-w-2xl text-base' : 'text-sm']}>{data.description}</p>
   <ul class="mt-4 flex flex-wrap gap-2" aria-label="Technologies">
     {data.tags.map((t) => <li class="tag">{t}</li>)}
   </ul>
-  {stats.length > 0 && <p class="mt-4 font-mono text-xs text-slate-500">{stats.join(' · ')}</p>}
+  {stats.length > 0 && <p class="mt-4 font-mono text-xs text-slate-500 dark:text-slate-400">{stats.join(' · ')}</p>}
   <p class="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm font-medium">
     <a class={link} href={data.repo}>GitHub ↗</a>
     {data.docs && <a class={link} href={data.docs}>Docs ↗</a>}
